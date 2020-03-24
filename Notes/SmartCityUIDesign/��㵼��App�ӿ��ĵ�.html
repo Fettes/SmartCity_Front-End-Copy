@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><title>多点导航App接口文档</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="多点导航app接口文档">多点导航App接口文档</h1>
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><a href="#多点导航app接口文档">多点导航App接口文档</a><ul>
+<li><ul>
+<li><ul>
+<li><a href="#1添加任务">1.添加任务</a></li>
+<li><a href="#2获取车辆信息">2.获取车辆信息</a></li>
+<li><a href="#3获取驾驶员信息">3.获取驾驶员信息</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<p><strong>接口域名</strong>：<a href="http://trash.jzbwlkj.com" target="_blank">http://trash.jzbwlkj.com</a> <br>
+<strong>请求方式</strong> : POST</p>
+
+<h4 id="1添加任务">1.添加任务</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript"><div class="hljs-line"> url  /api/trashcan/update_task
+</div><div class="hljs-line"> 参数 
+</div><div class="hljs-line"> task_id 任务<span class="hljs-built_in">id</span>
+</div><div class="hljs-line"> 返回
+</div></code></pre>
+
+<h4 id="2获取车辆信息">2.获取车辆信息</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs dts"><div class="hljs-line"> url <span class="hljs-meta-keyword">/api/</span>Trashcan/getcars
+</div><div class="hljs-line"> 参数
+</div><div class="hljs-line">number  车牌号，不传参数返回全部汽车信息
+</div><div class="hljs-line">返回
+</div><div class="hljs-line">{
+</div><div class="hljs-line">  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+</div><div class="hljs-line">  <span class="hljs-string">"message"</span>: <span class="hljs-string">"操作成功！"</span>,
+</div><div class="hljs-line">  <span class="hljs-string">"data"</span>: [
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">      <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"number"</span>: <span class="hljs-string">"99999"</span>,  <span class="hljs-comment">//车牌号</span>
+</div><div class="hljs-line">      <span class="hljs-string">"lng"</span>: <span class="hljs-string">"116.629685"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"lat"</span>: <span class="hljs-string">"35.419128"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"uptime"</span>: <span class="hljs-string">"1519370074"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"1518160317"</span>,
+</div><div class="hljs-line">      <span class="hljs-string">"status"</span>: <span class="hljs-number">1</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">  ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+
+
+<h4 id="3获取驾驶员信息">3.获取驾驶员信息</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs qml"><div class="hljs-line">    <span class="hljs-built_in">url</span> 
+ <span class="hljs-meta-keyword">/api/</span>Trashcan/getuser
+</div><div class="hljs-line">    参数
+</div><div class="hljs-line">     mobile  用户手机号，不传参数返回全部用户
+</div><div class="hljs-line">    返回
+</div><div class="hljs-line">        {
+</div><div class="hljs-line"><span class="hljs-string">"code"</span>:<span class="hljs-number">200</span>,
+</div><div class="hljs-line"><span class="hljs-string">"message"</span>:<span class="hljs-string">"操作成功！"</span>,
+</div><div class="hljs-line"><span class="hljs-string">"data"</span>:[
+</div><div class="hljs-line">    {
+</div><div class="hljs-line">        <span class="hljs-string">"id"</span>:<span class="hljs-number">6</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"user_login"</span>:<span class="hljs-string">"13639447983"</span>,  <span class="hljs-comment">//登录手机号</span>
+</div><div class="hljs-line">        <span class="hljs-string">"user_nickname"</span>:<span class="hljs-string">"驾驶员A"</span>,    <span class="hljs-comment">//驾驶员姓名</span>
+</div><div class="hljs-line">        <span class="hljs-string">"mobile"</span>:<span class="hljs-string">"13639447983"</span>,  <span class="hljs-comment">//手机号</span>
+</div><div class="hljs-line">        <span class="hljs-string">"user_type"</span>:<span class="hljs-number">2</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"user_pass"</span>:<span class="hljs-string">"###5896997a2e6127b3fc7ec9659409b540"</span>,  
+</div><div class="hljs-line">        <span class="hljs-string">"sex"</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"birthday"</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"last_login_time"</span>:<span class="hljs-number">1519347675</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"score"</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"coin"</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"balance"</span>:<span class="hljs-string">"0.00"</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"create_time"</span>:<span class="hljs-number">1517825115</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"user_status"</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"user_email"</span>:<span class="hljs-string">""</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"user_url"</span>:<span class="hljs-string">""</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"avatar"</span>:<span class="hljs-string">"user/20180205/7d99b66e83b4e946f5c848e7782c1a87.jpg"</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"signature"</span>:<span class="hljs-string">""</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"last_login_ip"</span>:<span class="hljs-string">"127.0.0.1"</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"user_activation_key"</span>:<span class="hljs-string">""</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"more"</span>:<span class="hljs-literal">null</span>,
+</div><div class="hljs-line">        <span class="hljs-string">"age"</span>:<span class="hljs-string">"25"</span>,  <span class="hljs-comment">//年龄</span>
+</div><div class="hljs-line">        <span class="hljs-string">"work_years"</span>:<span class="hljs-string">"3"</span>,  <span class="hljs-comment">//工龄</span>
+</div><div class="hljs-line">        <span class="hljs-string">"work_type"</span>:<span class="hljs-string">"收运工"</span>, <span class="hljs-comment">//工种属性</span>
+</div><div class="hljs-line">        <span class="hljs-string">"sel"</span>:<span class="hljs-number">0</span>
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">]
+</div><div class="hljs-line">}
+</div></code></pre></div></body></html>
